@@ -1,0 +1,478 @@
+body {
+    a:hover {
+        text-decoration: underline;
+    }
+    h2 {
+        @media #{$small-only} {
+            font-size: rem-calc(20px);
+        }
+    }
+}
+
+.main {
+    padding: 0;
+}
+
+#page-title {
+    margin: 0;
+}
+
+//svg icon support
+.webicon.small {
+    height:30px;
+    width:30px;
+}
+.webicon.large {
+    height:60px;
+    width:60px;
+}
+//set the NavBar module font in the tray so all the items fit horizontally at 1400px
+#navbar-administration .navbar-tray a {
+    font-size: rem-calc(13px);
+}
+#navbar-administration .navbar-tray-horizontal > .navbar-lining {
+    padding-right: 3em;
+}
+
+.commerce-fancy-attributes-color {
+    border-radius: 50%;
+    border-color: $primary-alt-color;
+}
+
+/* This region isn't in the grid and needs some custom love */
+.secondary-valen,#panels-ipe-regionid-secondary,.top-valen {
+    position: relative;
+}
+
+/* Footer styles */
+
+.copyright-wrapper {
+    margin-top: rem-calc(100px);
+    text-align: center;
+    padding: rem-calc(20px);
+    background-color: $white;
+}
+
+/* Homepage styles */
+
+.valen-home {
+    .pane-new-products-new-products-pane,.vac-recommended-products {
+        margin-bottom: rem-calc(50px);
+        .pane-title {
+            text-align: center;
+            padding-top: rem-calc(20px);
+        }
+        .jcarousel-container {
+            width: 100%;
+            height: rem-calc(200px);
+            ul {
+                height: rem-calc(200px);
+                .jcarousel-item {
+                    border: none;
+                    height: auto;
+                    width: rem-calc(200px);
+                    /* Reduce font size on slider product titles */
+                    .views-field-title-1 {
+                        a {
+                            font-size: rem-calc(12px);
+                        }
+                    }
+                    /* Some of the images have the wrong whitespace, this ensures that the height is even */
+                    .views-field-field-product-image {
+                        display: block;
+                        img {
+                            max-height: rem-calc(150px);
+                            height: rem-calc(150px);
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .jcarousel-clip {
+                width: inherit;
+            }
+            /* Replace carousel icons with simple arrows */
+            .jcarousel-prev {
+                background-image: none;
+                &::before {
+                    content: "<";
+                }
+            }
+            .jcarousel-next {
+                background-image: none;
+                &::before {
+                    content: ">";
+                }
+            }
+        }
+    }
+    .pane-editorial-callout-editorial-pane {
+        /* Center the title, following the other homepage title styles */
+        .pane-title {
+            text-align: center;
+            border-top: 1px solid $border-color;
+            padding-top: rem-calc(20px);
+        }
+        .views-field-body {
+            font-size: rem-calc(12px);
+        }
+        .views-field-view-node {
+            float: right;
+            font-size: rem-calc(14px);
+        }
+    }
+    .pane-bestselling-products-featured-bestseller-pane {
+        text-align: center;
+        .views-field-title-1 {
+            font-size: rem-calc(20px);
+            margin-top: rem-calc(10px);
+        }
+    }
+    .pane-bestselling-products-bestseller-secondary-pane {
+        /* Make sure that images are equally padded with whitespace */
+        .views-field-field-product-image {
+            a {
+                min-height: rem-calc(150px);
+                line-height: rem-calc(150px);
+                display: block;
+                img {
+                    vertical-align: middle;
+                }
+            }
+        }
+        .views-row {
+            text-align: center;
+        }
+    }
+    .bestsellers-title {
+        text-align: center;
+        border-top: 1px solid $border-color;
+        padding-top: rem-calc(20px);
+    }
+    .pane-collection-showcase-featured-collection-pane {
+        .pane-title {
+            text-align: center;
+            padding-top: rem-calc(20px);
+        }
+        .views-field-field-splash-image {
+            width: 100%;
+        }
+        .collection-meta {
+            @media #{$large-up} {
+                position: absolute;
+                bottom: 30%;
+                width: 100%;
+                @include background-image(linear-gradient(left, rgba(243, 239, 233, .9) 50%, rgba(243, 239, 233, 0.8) 60%, rgba(243, 239, 233, .7) 70%, rgba(243, 239, 233, 0) 80%));
+                padding: rem-calc(20px);
+            }
+        }
+        .views-field-path {
+            margin-top: rem-calc(10px);
+        }
+    }
+    /* Position the featured view inside the London hero. */
+    .pane-london-featured-product-panel-pane-1 {
+        display: none;
+        @media #{$large-only} {
+            position: absolute;
+            z-index: 1;
+            bottom: rem-calc(50px);
+            left: rem-calc(50px);
+        }
+        a,div {
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+            color: $white;
+        }
+        .views-field-field-images img {
+            border-radius: rem-calc(5px);
+        }
+    }
+}
+
+/* Catalog styles */
+
+.section-catalog {
+    #page-title {
+        display: none;
+    }
+
+    .view-products-catalog {
+        .views-field-field-images {
+        height:rem-calc(240px);
+        }
+        tr {
+            margin-bottom:rem-calc(40px);
+            display:inline-block;
+        }
+    }
+    .sidebar-first {
+        margin-top: rem-calc(10px);
+    }
+    /* Make color buttons circular and make the number of products easier to read */
+    .facetapi-dfs-valen-commerce-colors {
+        list-style: none;
+        text-align: center;
+        li.leaf {
+            display: inline-block;
+            margin: rem-calc(5px);
+            a:hover {
+                text-decoration: none;
+            }
+            .dfs-vac-fancy-attributes-color {
+                border-radius: 50%;
+                /* Lower the text to "center" it inside circle */
+                padding-top: rem-calc(10px);
+                display: block;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                color: $white;
+                /* Make sure the text is readable on all colors, including white */
+                text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+                border: 1px solid gray;
+            }
+        }
+    }
+    /* Remove left margin on all facetapi blocks */
+    .facetapi-dfs-valen-commerce-sizes,.facetapi-facetapi-links {
+        list-style: none;
+        li.leaf {
+            margin-left: 0;
+        }
+    }
+    /* Theme the facetapi blocks to look similar to original Valen */
+    .block-facetapi {
+        border: rem-calc(1px) solid $secondary-color;
+        .block-title {
+            background: $secondary-color;
+            color: $white;
+            padding: rem-calc(10px);
+            margin: 0;
+        }
+        .item-list,.search-api-ranges-widget, {
+            padding: rem-calc(10px);
+        }
+    }
+    .view-display-id-page_catalog {
+        margin-top: rem-calc(10px);
+        table {
+            background: none;
+            border: none;
+            tr.even, tr.alt, tr:nth-of-type(even) {
+                background: none;
+            }
+        }
+        .views-field-edit-node {
+            position: absolute;
+            a {
+                @extend .button;
+                @extend .tiny;
+                padding: rem-calc(10px);
+                margin: 0;
+            }
+        }
+    }
+    .search-api-ranges-widget {
+        label, button, p {
+            display: none;
+        }
+        .yui3-g {
+            text-align: center;
+            .range-box-left, .range-box-right {
+                display: inline-block;
+                input {
+                    border: none;
+                    background: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    pointer-events: none;
+                    padding: 0;
+                    max-width: rem-calc(30px);
+                }
+            }
+            .range-box-left {
+                margin: 0 10px 0 0;
+            }
+            .range-box-right {
+                margin: 0 0 0 20px;
+            }
+            .range-slider-box {
+                display: inline-block;
+                min-width: rem-calc(200px);
+                .range-slider {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Category styles */
+
+.valen-category {
+    .pane-category-hero-featured-product {
+        @media #{$medium-up} {
+            max-width: 75rem;
+            position: absolute;
+            margin-top:-250px;
+        }
+        .pane-title {
+            background: white;
+            margin-bottom: 0;
+            padding-left: rem-calc(20px);
+            padding-top: rem-calc(10px);
+            width: rem-calc(135px);
+        }
+        .pane-content {
+            background-color: white;
+            padding: rem-calc(20px);
+            @media #{$medium-up} {
+                height: rem-calc(250px);
+            }
+            .views-field-field-product-image {
+                @media #{$medium-up} {
+                    float: left;
+                }
+                margin-right: 20px;
+            }
+            .collection-featured-right {
+                .views-field-commerce-price {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .pane-category-hero-category-products-pane {
+        text-align: center;
+        padding-top: rem-calc(50px);
+        .views-row {
+            display: inline-block;
+            margin: rem-calc(20px);
+        }
+    }
+    /* Style the hero by making it fullwidth and centering the hero text */
+    .pane-category-hero-panel-pane-1 {
+        img {
+            width: 100%;
+        }
+        .views-field-field-logo {
+            position: absolute;
+            top: 25%;
+            @media #{$small-only} {
+                top: 0;
+            }
+            text-align: center;
+            width: 100%;
+            h1 {
+                font-size: rem-calc(50px);
+                color: $white;
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            }
+        }
+        .views-field-body {
+            position: absolute;
+            top: 40%;
+            text-align: center;
+            width: 100%;
+            color: $white;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+/* Collection styles */
+.valen-collection {
+    .pane-node-field-social {
+        @media #{$medium-up} {
+            position: absolute;
+            z-index: 1;
+            bottom: rem-calc(10px);
+            left: rem-calc(10px);
+        }
+    }
+    .pane-collection-collection-list-pane {
+        text-align: center;
+        .views-row {
+            width: 50%;
+            float: left;
+            padding-bottom: rem-calc(25px);
+            margin-bottom: rem-calc(25px);
+            border-bottom: rem-calc(1px) solid $secondary-color;
+        }
+    }
+    .pane-collection-collection-featured {
+        text-align: center;
+        max-width: 60%;
+        margin: 0 auto;
+        margin-bottom: rem-calc(50px);
+    }
+    /* Style the hero by making it fullwidth and centering the hero text */
+    .pane-collection-panel-pane-1 {
+        img {
+            width: 100%;
+        }
+        .views-field-title {
+            position: absolute;
+            top: 25%;
+            @media #{$small-only} {
+                top: 5%;
+            }
+            text-align: center;
+            width: 100%;
+            h1 {
+                @media #{$medium-up} {
+                    font-size: rem-calc(50px);
+                }
+                color: $white;
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            }
+        }
+        .views-field-body {
+            position: absolute;
+            top: 40%;
+            text-align: center;
+            width: 100%;
+            color: $white;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+/* Shopping cart page styles */
+
+.page-cart {
+    .l-main {
+        @extend .row;
+        #page-title {
+            margin-top: rem-calc(20px);
+            margin-bottom: rem-calc(10px);
+        }
+        .line-item-summary {
+            text-align: left;
+        }
+    }
+}
+
+/* Commerce node styles */
+
+.page-node.node-type-commerce {
+    .pane-node-body {
+        margin-top: rem-calc(20px);
+    }
+    .pane-product-reviews-panel-pane-1 {
+        .review-left {
+            @media #{$medium-up} {
+                text-align: right;
+            }
+        }
+    }
+    .commerce-add-to-cart {
+        .form-type-radio.form-item-attributes-field-product-color {
+            display: inline-block;
+        }
+        /* Fixes a weird bug where add to wishlist and cart buttons won't be displayed inline */
+        div[id^="edit-line-item-fields-"] {
+            display: none;
+        }
+    }
+}

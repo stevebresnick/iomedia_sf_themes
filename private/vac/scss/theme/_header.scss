@@ -1,0 +1,136 @@
+/* Header styles */
+
+.l-header {
+    background-color: $secondary-color;
+    /* Links in the header have a slightly non-standard style */
+    a {
+        color: $white;
+        font-size: rem-calc(12px);
+    }
+    .l-header-region-wrap {
+        background-color: $primary-alt-color;
+        /* Small trick to get text middle-aligned correctly */
+        line-height: rem-calc(40px);
+        padding-top: rem-calc(5px);
+        @media #{$small-only} {
+            text-align: center;
+        }
+        /* Make sure that the blocks are next to eachother */
+        .block-dfs-vac-base {
+            display: inline-block;
+            .contextual-links-wrapper {
+                display: none;
+            }
+            .vac-user {
+                /* foundation icon "torso" */
+                &::before {
+                    @extend %icon;
+                    content: "\f1fe";
+                }
+            }
+            /* Set a min-width for the user dropdown */
+            ul {
+                min-width: rem-calc(150px);
+            }
+        }
+        .block-system-user-menu {
+            display: inline-block;
+            .contextual-links-wrapper {
+                display: none;
+            }
+            /* Space the list elements so that the base block looks like a menu item */
+            ul {
+                margin-left: rem-calc(16px);
+                margin-bottom: 0;
+                @media #{$small-only} {
+                    margin-left: inherit;
+                }
+                li {
+                    margin-right: rem-calc(16px);
+                    display: inline-block;
+                    &.shopping-cart-link {
+                        /* foundation icon "shopping cart" */
+                        &::before {
+                            @extend %icon;
+                            content: "\f1b1";
+                        }
+                    }
+                    &.view-wishlist-link {
+                        /* foundation icon "heart" */
+                        &::before {
+                            @extend %icon;
+                            content: "\f159";
+                        }
+                    }
+                }
+            }
+            #shopping-cart-drop {
+                padding: rem-calc(5px);
+                z-index: 110;
+                a {
+                    color: $primary-alt-color;
+                }
+            }
+        }
+        /* Make sure the search block maintains its wonky font style */
+        .block-search {
+            float: right;
+            min-width: rem-calc(400px);
+            @media #{$small-only} {
+                float: none;
+                min-width: inherit;
+            }
+            a {
+                color: inherit;
+                font-size: inherit;
+            }
+            .search-form {
+                margin-bottom: 0;
+                input,button {
+                    margin-bottom: 0;
+                }
+                button {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+    .alt-header {
+        padding: rem-calc(10px);
+        #main-menu {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: rem-calc(10px);
+            margin-left: rem-calc(10px);
+            #main-menu-links {
+                margin-bottom: 0;
+                li {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    /* Mobile top bar styles */
+    .top-bar {
+        background-color: transparent;
+        min-height: rem-calc(80px);
+        padding-top:rem-calc(15px);
+        padding-bottom:rem-calc(15px);
+        .title-area {
+            min-height: rem-calc(60px);
+            background-color: transparent;
+            .name {
+                margin: 5px;
+                text-align: center;
+            }
+        }
+        .top-bar-section li:not(.has-form) a:not(.button) {
+            background:transparent;
+            margin-top:10px;
+        }
+
+        .top-bar-section .has-dropdown>a:after {
+            top:2rem;
+        }
+    }
+}

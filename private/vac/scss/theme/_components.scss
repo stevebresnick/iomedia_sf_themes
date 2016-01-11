@@ -1,0 +1,150 @@
+/* Slick styles */
+
+.slick {
+    @media #{$small-only} {
+        display: none;
+    }
+    .slick-dots {
+        margin: 0;
+        button {
+            height: 20px;
+            width: 20px;
+            color: transparent;
+        }
+        .slick-active {
+            button {
+                background-color: $button-alt-color;
+            }
+        }
+    }
+    .field-name-field-title,.field-name-field-body {
+        color: $white;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+        .button {
+            position: absolute;
+            left: 0px;
+            top: 50px;
+        }
+    }
+    /* I think the next/previous controls take away from the design */
+    .slick__arrow {
+        display: none !important;
+    }
+}
+
+/* Widget styles */
+
+.fieldable-panels-pane.hero {
+    color: $white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    .hero-elements {
+        top: 20%;
+        @media #{$small-only} {
+            top: rem-calc(10px);
+        }
+        .field-name-field-hero-headline-1 {
+            @media #{$medium-up} {
+                font-size: rem-calc(40px);
+                margin-bottom: rem-calc(20px);
+            }
+        }
+        .field-name-field-hero-headline-2 {
+            @media #{$medium-up} {
+                margin-bottom: rem-calc(20px);
+            }
+        }
+        .field-name-field-hero-button-link a {
+            @media #{$small-only} {
+                padding: rem-calc(10px);
+            }
+        }
+    }
+}
+
+/* Shopping cart block styles */
+
+#shopping-cart-drop {
+    max-width: rem-calc(300px);
+}
+
+/* Search block styles */
+
+.block-search {
+    #search-block-form{
+        margin:0;
+        position:relative;
+
+
+        input[type="text"]{
+            margin:0;
+            background: #efefef;
+            color: $primary-color;
+            z-index: 102;
+            border: 1px solid $secondary-color;
+            position:relative;
+            @media #{$small-only} {
+                margin: rem-calc(5px);
+                padding: rem-calc(20px);
+            }
+
+        }
+        button {
+            margin:0;
+        }
+
+        .ui-theme-basic-grey.ui-autocomplete-loading {
+            background-image: url("../images/throbber.gif");
+            background-position: 82% 7px;
+            background-repeat: no-repeat;
+            background-size:20px 20px;
+        }
+
+        .close-cancel {
+            position: absolute;
+            left: 10px;
+            z-index: 101;
+            top: 18px;
+            color: $primary-color;
+        }
+        #ui-theme-basic-grey {
+            z-index: 101 !important;
+            background: $white;
+            top: -16px !important;
+            left: -95px !important;
+            padding-top: 70px;
+            min-width: 500px;
+            .ui-autocomplete-field-group {
+                float: left;
+                left: 10px;
+                @media #{$small-only} {
+                    float: inherit;
+                    left: inherit;
+                }
+                color: #000;
+                &:after {
+                    clear: both;
+                }
+            }
+            .ui-autocomplete-field-title {
+                color: #222;
+                font-size: .9em;
+            }
+            .ui-autocomplete-field-term {
+                color: $secondary-color;
+            }
+            .ui-menu-item {
+                clear: none;
+                width: 100%;
+                padding-left: 30%;
+                font-size: .9em;
+            }
+        }
+        .form-submit {
+            position: absolute;
+            right: 20px;
+            top: 9px;
+            width: 20px;
+            z-index: 104;
+        }
+    }
+}

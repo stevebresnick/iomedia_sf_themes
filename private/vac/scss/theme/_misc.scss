@@ -1,0 +1,13 @@
+//panelizer still outputs a empty <h1> when there is no title so remove its margin
+.node-type-insurance-product h1#page-title, .node-type-page h1#page-title {
+	margin:0;
+}
+
+// Hide Navbar icons on mobile.
+@media #{$small-only} {
+	#navbar-administration .navbar-bar {
+		.navbar-tab#responsive-preview-navbar-tab, .navbar-tab.df-tools-color-icon-wrapper {
+			display: none;
+		}
+	}
+}
